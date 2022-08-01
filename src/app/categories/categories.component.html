@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col-md-12">
+    <app-add-category
+      (categoryAdded)="onCategoryAdd($event)"
+    ></app-add-category>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-8">
+    <div class="row">
+      <app-single-category
+        class="col-md-4"
+        *ngFor="let category of categories"
+        [category]="category"
+        (categorySelected)="onCategorySelected($event)"
+        (categoryEdited)="onCategoryEdited($event)"
+      ></app-single-category>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <app-view-category
+      *ngIf="selectedCategory"
+      [category]="selectedCategory"
+    ></app-view-category>
+    <app-edit-category
+      *ngIf="editCategoryDetails"
+      [category]="editCategoryDetails"
+      (categoryUpdated)="onUpdateCategory($event)"
+    ></app-edit-category>
+  </div>
+</div>

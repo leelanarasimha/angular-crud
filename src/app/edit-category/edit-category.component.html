@@ -1,0 +1,17 @@
+<h5>Update Category</h5>
+
+<div>
+  <label>Title</label>
+  <input type="text" class="form-control" [(ngModel)]="title" />
+</div>
+
+<div>
+  <label>Description</label>
+  <textarea class="form-control" [(ngModel)]="description"></textarea>
+</div>
+
+<div class="my-2">
+  <button class="btn btn-warning btn-sm" (click)="onUpdateCategory()">
+    Update
+  </button>
+</div>
